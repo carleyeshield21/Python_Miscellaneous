@@ -13,7 +13,6 @@
 # # new_list = [new_item for item in list]
 # same_nums = [int(x) for x in f1_list if x in f2_list]
 # print(same_nums)
-import pandas
 
 # samp_list = [1,2,3,4,5]
 # new_list = [new_item for item in list]
@@ -34,21 +33,25 @@ import pandas
 # Python List Comprehension with condition
 # newer_list = [new_item for item in list if test]
 # list = [1,2,3,4,5]
-# new_list = [num for num in list if num%2 == 1]
-# print(new_list)
+# phonetic_equivalent = [num for num in list if num%2 == 1]
+# print(phonetic_equivalent)
 
 # numbers =[1,1,2,3,5,8,13,21,34,55]
-# # new_list = [new_item for item in list]
+# # phonetic_equivalent = [new_item for item in list]
 # sq_nums = [num*num for num in numbers]
 # print(sq_nums)
 #
 # evens = [num for num in numbers if num%2==0]
 # print(evens)
 
+# # LIST COMPREHENSION SYNTAX
+# Python List Comprehension
+# new_list = [new_item for item in list]
+# Python List Comprehension with condition
+# newer_list = [new_item for item in list if test]
 # Dictionary Comprehension
 # Keyword pattern
 # new_dict = {new_key:new_value for item in list}
-
 # Dictionary based on another dictionary
 # new_dict = {new_key:new_value for (key, value) in dict.items()}
 # With if condition
@@ -60,6 +63,7 @@ import pandas
 # # new_dict = {new_key:new_value for item in list}
 # student_scores = {student:random.randint(1,100) for student in names}
 # print(student_scores)
+# print(type(student_scores))
 #
 # # passed_students = {new_key:new_value for (key,value) in dictionary.items()}
 # passed_students = {student:score for (student,score) in student_scores.items() if score >= 60}
@@ -120,15 +124,71 @@ import pandas
 nato = pandas.read_csv('nato_phonetic_alphabet.csv')
 # print(type(nato))
 # print(nato)
-
+#
 # nato_dict = nato.to_dict()
-# # print(nato_dict)
+# print(nato_dict)
 
 # for(index,row) in student_df.iterrows():
-for (index, row) in nato.iterrows():
-    # print(row.letter)
-    print(row.code)
+# for (index, row) in nato.iterrows():
+#     # print(row.letter)
+#     print(row.code)
 
 # new_dict = {new_key:new_value for(key,value) in dict.items()}
+# {new_key:new_value for(index, row) in df.iterrows()}
 nato_iterrows = {row.letter:row.code for(index,row) in nato.iterrows()}
 print(nato_iterrows)
+# print(nato_iterrows.values())
+# print(nato_iterrows.keys())
+# print(type(nato_iterrows.keys()))
+# print(type(nato_iterrows))
+nato_iterrows_key_list = [value for value in nato_iterrows.keys()]
+nato_iterrows_values_list = [value for value in nato_iterrows.values()]
+# print(nato_iterrows_key_list)
+# print(nato_iterrows_values_list)
+dict_keys_to_list = list(nato_iterrows.keys())
+dict_values_to_list = list(nato_iterrows.values())
+# print(dict_keys_to_list)
+# print(dict_values_to_list)
+# print(type(dict_keys_to_list))
+# print(type(dict_values_to_list))
+
+word = input('Type any word\n\n')
+letters_of_word = [letter.upper() for letter in word]
+print(letters_of_word)
+print(type(letters_of_word))
+
+# new_dict = {new_key:new_value for item in list if test}
+# new_dict = {new_key:new_value for (key, value) in dict.items()}
+# This will output the correct dictionary but in the order of the letters in the word input
+word_dict = {key:value for (key, value) in nato_iterrows.items() if key in letters_of_word}
+print(word_dict)
+
+# word_dict2 = {letter:new_value for letter in letters_of_word if letter in dict_values_to_list}
+
+# for let in letters_of_word:
+#     if let in dict_keys_to_list:
+#         print(dict_keys_to_list.index(let))
+#         print(dict_values_to_list[dict_keys_to_list.index(let)])
+
+dick = {}
+for n in letters_of_word:
+    for key, value in nato_iterrows.items():
+        if n == key:
+            dick[key]=value
+print(dick)
+print(type(dick))
+
+# word_dict = {letter:new_value for letter in letters_of_word}
+# print(word_dict)
+# # LIST COMPREHENSION SYNTAX
+# Python List Comprehension
+# new_list = [new_item for item in list]
+# Python List Comprehension with condition
+# newer_list = [new_item for item in list if test]
+# Dictionary Comprehension
+# Keyword pattern
+# new_dict = {new_key:new_value for item in list}
+# Dictionary based on another dictionary
+# new_dict = {new_key:new_value for (key, value) in dict.items()}
+# With if condition
+# new_dict = {new_key:new_value for (key, value) in dict.items() if test}
