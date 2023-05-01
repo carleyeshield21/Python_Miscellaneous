@@ -41,4 +41,5 @@ else:
     print(content)
 # the method finally will run no matter if there is an exception or not:
 finally:
+    file.close()
     print("bahala na kung may error")
