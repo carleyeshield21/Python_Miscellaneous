@@ -1,11 +1,11 @@
-import pandas
-nato = pandas.read_csv('nato_phonetic_alphabet.csv')
-print(nato)
+# import pandas
+# nato = pandas.read_csv('nato_phonetic_alphabet.csv')
+# print(nato)
 
 # MY SOLUTION
 # nato_iterrows is exactly the same as word_dict, both of these are dictionary
-nato_iterrows = {row.letter:row.code for(index,row) in nato.iterrows()}
-word_dict = {key:value for (key, value) in nato_iterrows.items()}
+# nato_iterrows = {row.letter:row.code for(index,row) in nato.iterrows()}
+# word_dict = {key:value for (key, value) in nato_iterrows.items()}
 # print(nato_iterrows)
 # print(word_dict)
 # print(nato_iterrows == word_dict)
@@ -23,35 +23,25 @@ word_dict = {key:value for (key, value) in nato_iterrows.items()}
 #         print(list_output)
 # my_solution()
 
-# def my_solution2():
-#     word = input('Type any word\n')
-#     letters_of_word = word.upper()
-#     try:
-#         # list_output = [word_dict[n] for n in letters_of_word]
-#         list_output = [nato_iterrows[n] for n in letters_of_word]
-#     except KeyError:
-#         print('Letters only, no numbers, no punctuation marks, no special characters')
-#         my_solution2()
-#     else:
-#         print(list_output)
-# my_solution2()
-
-def new():
+import pandas
+nato = pandas.read_csv('nato_phonetic_alphabet.csv')
+nato_iterrows = {row.letter:row.code for(index,row) in nato.iterrows()}
+def other_solution():
     word = input('Type any word\n')
     letters_of_word = word.upper()
     dick = {}
     for n in letters_of_word:
         try:
-            list_output = [word_dict[n] for n in letters_of_word]
-            for key, value in word_dict.items():
+            list_output = [nato_iterrows[n] for n in letters_of_word]
+            for key, value in nato_iterrows.items():
                 if n == key:
                     dick[key]=value
         except KeyError:
             print('Letters only, no numbers, no punctuation marks, no special characters')
-            new()
+            other_solution()
             break
     print(dick)
-new()
+other_solution()
 
 # # DRAFT
 # word = input('Type any word\n')
