@@ -36,20 +36,51 @@ file_to_dict = file.to_dict(orient='records')
 # fat_dict = {row["item"]:row["fat"] for(index, row) in file.iterrows()}
 # print(fat_dict)
 
-# Lists created from each column of the given csv file converted to dataframe using the method iterrows
-item_list = [data["item"] for (index,data) in file.iterrows()]
-calories_list = [data["calories"] for (index, data) in file.iterrows()]
-fat_list = [data["fat"] for (index, data) in file.iterrows()]
-carb_list = [data["carb"] for (index, data) in file.iterrows()]
-fiber_list = [data["fiber"] for (index, data) in file.iterrows()]
-protein_list = [data["protein"] for (index, data) in file.iterrows()]
-type_list = [data["type"] for (index, data) in file.iterrows()]
-print(item_list)
-print(calories_list)
-print(fat_list)
-print(carb_list)
-print(fiber_list)
-print(protein_list)
-print(type_list)
+# # Lists created from each column of the given csv file converted to dataframe using the method iterrows
+# # creating a list from a given data will create a list without discarding repeating items, all will be included in the list
+# item_list = [data["item"] for (index,data) in file.iterrows()]
+# calories_list = [data["calories"] for (index, data) in file.iterrows()]
+# fat_list = [data["fat"] for (index, data) in file.iterrows()]
+# carb_list = [data["carb"] for (index, data) in file.iterrows()]
+# fiber_list = [data["fiber"] for (index, data) in file.iterrows()]
+# protein_list = [data["protein"] for (index, data) in file.iterrows()]
+# type_list = [data["type"] for (index, data) in file.iterrows()]
+# print(item_list)
+# print(len(item_list))
+# print(calories_list)
+# print(len(calories_list))
+# print(fat_list)
+# print(len(fat_list))
+# print(carb_list)
+# print(len(carb_list))
+# print(fiber_list)
+# print(len(fiber_list))
+# print(protein_list)
+# print(len(protein_list))
+# print(type_list)
+# print(len(type_list))
+
+# # when we create a dictionary from a list with repeating items, it will only output a dictionary with unique items and will dicard doubles
+# item_dict = {data["item"] for (index,data) in file.iterrows()}
+# calories_dict = {data["calories"] for (index, data) in file.iterrows()}
+# fat_dict = {data["fat"] for (index, data) in file.iterrows()}
+# carb_dict = {data["carb"] for (index, data) in file.iterrows()}
+# fiber_dict = {data["fiber"] for (index, data) in file.iterrows()}
+# protein_dict = {data["protein"] for (index, data) in file.iterrows()}
+# type_dict = {data["type"] for (index, data) in file.iterrows()}
+# print(item_dict)
+# print(len(item_dict))
+# print(carb_dict)
+# print(len(carb_dict))
+# print(fat_dict)
+# print(len(fiber_dict))
+# print(carb_dict)
+# print(len(carb_dict))
+# print(fiber_dict)
+# print(len(fiber_dict))
+# print(protein_dict)
+# print(len(protein_dict))
+# print(type_dict)
+# print(len(type_dict))
 
 # birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
