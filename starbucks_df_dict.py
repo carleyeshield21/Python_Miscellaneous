@@ -83,4 +83,20 @@ file_to_dict = file.to_dict(orient='records')
 # print(type_dict)
 # print(len(type_dict))
 
-# birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
+# # birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
+# # creating a dictionary with a tuple
+# item_dict ={(row_data["calories"],row_data["fat"]):row_data["item"] for (index, row_data) in file.iterrows()}
+# print(item_dict)
+# print(len(item_dict))
+#
+# # using the for loop below will output the first item as the key and value
+# for key, value in item_dict:
+#     print(key)
+#     print(value)
+#     print('=====')
+#
+# # the for loop below using .items will take the tuple as the key and the item as the value
+# for key, value in item_dict.items():
+#     print(key)
+#     print(value)
+#     print('=====')
