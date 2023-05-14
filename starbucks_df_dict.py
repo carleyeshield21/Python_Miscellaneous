@@ -36,11 +36,20 @@ file_to_dict = file.to_dict(orient='records')
 # fat_dict = {row["item"]:row["fat"] for(index, row) in file.iterrows()}
 # print(fat_dict)
 
-# birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
 # Lists created from each column of the given csv file converted to dataframe using the method iterrows
 calories_list = [data["calories"] for (index, data) in file.iterrows()]
+item_list = [data["item"] for (index,data) in file.iterrows()]
 fat_list = [data["fat"] for (index, data) in file.iterrows()]
 carb_list = [data["carb"] for (index, data) in file.iterrows()]
 fiber_list = [data["fiber"] for (index, data) in file.iterrows()]
 protein_list = [data["protein"] for (index, data) in file.iterrows()]
 type_list = [data["type"] for (index, data) in file.iterrows()]
+print(item_list)
+print(calories_list)
+print(fat_list)
+print(carb_list)
+print(fiber_list)
+print(protein_list)
+print(type_list)
+
+# birthdays_dict = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}
