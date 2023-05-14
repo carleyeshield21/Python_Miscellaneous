@@ -37,8 +37,8 @@ file_to_dict = file.to_dict(orient='records')
 # print(fat_dict)
 
 # Lists created from each column of the given csv file converted to dataframe using the method iterrows
-calories_list = [data["calories"] for (index, data) in file.iterrows()]
 item_list = [data["item"] for (index,data) in file.iterrows()]
+calories_list = [data["calories"] for (index, data) in file.iterrows()]
 fat_list = [data["fat"] for (index, data) in file.iterrows()]
 carb_list = [data["carb"] for (index, data) in file.iterrows()]
 fiber_list = [data["fiber"] for (index, data) in file.iterrows()]
