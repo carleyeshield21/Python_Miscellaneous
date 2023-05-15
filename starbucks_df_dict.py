@@ -100,3 +100,6 @@ file_to_dict = file.to_dict(orient='records')
 #     print(key)
 #     print(value)
 #     print('=====')
+
+# # creating a dictionary from the dataframe file with double tuples
+# tuple_dict = {(row["item"],row["protein"]):(row["item"],row["carb"]) for (index, row) in file.iterrows()}
