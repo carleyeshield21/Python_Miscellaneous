@@ -40,3 +40,9 @@ for text in article_text:
 
 text_list = [text.get_text() for text in article_text]
 print(text_list)
+
+print(f'The highest score is {max(score_list)}')
+print(f'The website the highest score is {links[score_list.index(max(score_list))]}')
+
+print(f'The lowest score is {min(score_list)}')
+print(f'The website the highest score is {links[score_list.index(min(score_list))]}')
