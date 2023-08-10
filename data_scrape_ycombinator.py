@@ -18,12 +18,16 @@ for arts in articles:
         print(the_link)
 
 # sample of extracting a specific piece of data, here we extract the score
-# articles1 = the_soap.find_all(name='span', class_='score')
-# print(articles1[0].get_text())
+articles1 = the_soap.find_all(name='span', class_='score')
 
 # looping through each item, then using the split to further extract the numerical data using the the int to convert
 # from string into an integer value
 # for art in articles1:
-#     print(art.text)
-#     print(art.text.split(' ')[0])
+#     # print(art.text)
+#     # print(art.text.split(' ')[0])
 #     print(int(art.text.split(' ')[0]))
+
+# extracting the text from the bs4 Tag
+# article_text = the_soap.find_all(name='span',class_='titleline')
+# for text in article_text:
+#     print(text.get_text())
