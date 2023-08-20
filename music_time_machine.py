@@ -1,9 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
-import re
-import random
-# # billboard_url = 'https://www.billboard.com/charts/hot-100/#'
-billboard_url = 'https://www.billboard.com/charts/hot-100/1980-07-03/'
+
+chosen_date = input('Choose a date in this format: YYYY-MM-DD\n')
+billboard_url = 'https://www.billboard.com/charts/hot-100/' + chosen_date
 response_text = requests.get(billboard_url).text
 response_soup = BeautifulSoup(response_text,'html.parser')
 # print(response_soup.prettify())
@@ -16,7 +15,7 @@ artists_names = [artist.get_text().strip() for artist in song_artist]
 
 # student_scores = {student:random.randint(1,100) for student in names}
 for n in range(0,100):
-    print(f'{song_list[n]} -- {artists_names[n]}')
+    print(f'{n+1}. {song_list[n]} -- {artists_names[n]}')
 
 # # date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 # # URL = "https://www.billboard.com/charts/hot-100/"
