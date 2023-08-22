@@ -36,7 +36,7 @@ for n in range(0,100):
 
 # # chosen_date = input('Choose a date in this format: YYYY-MM-DD\n')
 # # billboard_url = 'https://www.billboard.com/charts/hot-100/' + chosen_date
-# billboard_url = 'https://www.billboard.com/charts/hot-100/1990-12-25'
+# billboard_url = 'https://www.billboard.com/charts/hot-100/1989-07-25'
 # response_text = requests.get(billboard_url).text
 # response_soup = BeautifulSoup(response_text,'html.parser')
 
@@ -54,10 +54,6 @@ for n in range(0,100):
 #     peak_pos.append(int(list[m]))
 #     m+=7
 
-# print(wks_on_chart)
-# print(peak_pos)
-
-
 # # ===============================================================
 # song_title = response_soup.find_all(name='h3', class_='a-no-trucate')
 # song_list = [song.getText().strip() for song in song_title]
@@ -67,4 +63,8 @@ for n in range(0,100):
 
 # # student_scores = {student:random.randint(1,100) for student in names}
 # for n in range(0,100):
-#     print(f'{n+1}. {song_list[n]} -- {artists_names[n]}')
+#     # print(f'{n+1}. {song_list[n]} -- {artists_names[n]}\n')
+#     print(f'{n + 1}. {song_list[n]} -- {artists_names[n]}\n      Spent'
+#           f' {wks_on_chart[n]} week/s on the Billboard 100\n      Reached '
+#           f'number '
+#           f'{peak_pos[n]} as its highest position')
