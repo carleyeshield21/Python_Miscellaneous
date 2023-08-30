@@ -1,7 +1,7 @@
 listahan = []
 while True:
     user_action = input("Type 'a' to add item to list\n's' to view your list\n'e' to edit your list\n'x' to "
-                        "exit and view your list\n")
+                        "exit and view your list\n'r' to remove item from the list\n")
     match user_action:
         case 'a':
             item = input('Type an entry\n')
@@ -13,6 +13,12 @@ while True:
             for entry in listahan:
                 print(f'{listahan.index(entry)+1}. {entry}')
             print('==============')
+
+        case 'r':
+            num_item = int(input('Type the number of the item you want to remove\n'))
+            listahan.remove(listahan[num_item-1])
+            print(listahan)
+
         case 'e':
             try:
                 for entry in listahan:
