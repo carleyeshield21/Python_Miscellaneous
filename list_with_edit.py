@@ -28,7 +28,10 @@ while True:
             listahan = text_file.readlines()
             num_item = int(input('Type the number of the item you want to remove\n'))
             if num_item <= len(listahan):
+                text_file = open('file.txt','r')
                 listahan.remove(listahan[num_item - 1])
+                text_file = open('file.txt','w')
+                text_file.writelines(listahan)
                 print(listahan)
             else:
                 print('The item you chose does not exist\nPlease try again.\n')
@@ -48,14 +51,8 @@ while True:
                         edited_item = input('Type the new entry\n') + '\n'
                         text_file = open('file.txt','r')
                         listahan[to_edit - 1] = edited_item.capitalize()
-
-                        print(listahan)
                         text_file = open('file.txt','w')
                         text_file.writelines(listahan)
-
-                        print(f'Length of listahan{len(listahan)}')
-
-
                 else:
                     print('The item you chose does not exist\nPlease try again.\n')
                     user_action = input("Type 'a' to add item to list\n's' to view your list\n'e' to edit your list\n'x' to "
