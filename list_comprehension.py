@@ -192,3 +192,16 @@ print(type(dick))
 # new_dict = {new_key:new_value for (key, value) in dict.items()}
 # With if condition
 # new_dict = {new_key:new_value for (key, value) in dict.items() if test}
+
+filenames = ['1.doc', '1.report', '1.presentation']
+# Using for loop and append in editing list
+filenames2 = []
+for file in filenames:
+    filenames2.append(f"{file.replace('.','-')}.txt")
+    # print(file)
+    # print(file.replace('.','-'))
+    # print(f"{file.replace('.','-')}.txt")
+print(filenames2)
+# Renaming items in list using list comprehension
+new_filenames = [f"{file.replace('.','-')}.txt" for file in filenames]
+print(new_filenames)
