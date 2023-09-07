@@ -209,3 +209,19 @@ while True:
             exit()
         else:
             continue
+
+# Computing area and perimeter of a rectangle and rejecting if the input values are from a square and if values are
+# non numerical
+while True:
+    try:
+        length = float(input('Type the length of the rectangle\n'))
+        width = float(input('Type the width of the rectangle\n'))
+        if length == width:
+            print('You have a square. Please try again')
+            continue
+        else:
+            print(f'The perimeter is {2 * (length + width)}')
+            exit()
+    except ValueError:
+        print('You have entered a non numerical value. Please try again')
+    continue
