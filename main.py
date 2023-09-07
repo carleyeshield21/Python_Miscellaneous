@@ -192,3 +192,20 @@ print(type(dick))
 # new_dict = {new_key:new_value for (key, value) in dict.items()}
 # With if condition
 # new_dict = {new_key:new_value for (key, value) in dict.items() if test}
+
+# Using continue method in a while loop
+lisht = [1,'a','b',3]
+counter = 0
+while True:
+    try:
+        index = int(input('Input an index\n'))
+        print(lisht[index])
+        break
+    except IndexError:
+        counter += 1
+        print(f'{5-counter} tries remaining')
+        if counter == 5:
+            print('You have reached the maximum number of tries')
+            exit()
+        else:
+            continue
