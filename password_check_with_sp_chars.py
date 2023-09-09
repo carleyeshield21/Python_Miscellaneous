@@ -1,5 +1,6 @@
-def strength(password):
+def strength():
     import string
+    password = input('Type in your password to test its strength\n')
     pass_list = list(password)
     specials = set(string.punctuation)
     new_special = list(specials)
@@ -45,8 +46,8 @@ def strength(password):
     else:
         return print('Weak Password')
 
-
-strength('i7H53IkL(')
+strength()
+# strength('i7H53IkL(')
 # strength('wGbnaUgxdTj')
 # strength('G9L1')
 # strength('qkvUVw0MrrXaOBBa')
