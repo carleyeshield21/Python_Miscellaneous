@@ -4,7 +4,7 @@ password_strength.title('Password Strength Test')
 password_strength.config(padx=50,pady=50)
 password_strength.config(background='lightblue')
 password_strength.geometry("1300x550+500+300")
-strength_canvas = Canvas(password_strength,width=800,height=400)
+strength_canvas = Canvas(password_strength,width=800,height=400,background='#FFF59D')
 strength_canvas.grid(row=1,column=1,rowspan=2)
 text = strength_canvas.create_text(150,40,text="**Password Remarks",font=('Calibri 18'), fill="black")
 
