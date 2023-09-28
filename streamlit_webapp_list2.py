@@ -3,7 +3,8 @@ import streamlit
 
 streamlit.title('WibbApp')
 streamlit.subheader('Web App List')
-streamlit.write('Gumawa ka na ng listahan')
+# streamlit.write('Gumawa ka na ng listahan')
+streamlit.write('<h1><code>Gumawa ka na ng listahan</code></h1>',unsafe_allow_html=True)
 
 def add_item():
     added_item = streamlit.session_state['new_item']
@@ -33,6 +34,7 @@ try:
                     listfile.pop(index)
                     new_file_list = open('file.txt','w')
                     new_file_list.writelines(listfile)
+                    streamlit.experimental_rerun()
         # pass
 except FileNotFoundError:
     print('A file text will be created')
