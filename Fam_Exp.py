@@ -2,7 +2,8 @@ import streamlit
 from plotly import express
 import pandas
 
-streamlit.header('Family Income and Expenditure Plotting',divider='rainbow')
+streamlit.header('Expenses and life conditions in Different regions in the Philippines ',
+                 divider='rainbow')
 
 fam_exp = pandas.read_csv('/home/carleyeshield/PycharmProjects/pythonProjects/Family Income and Expenditure.csv')
 rice_exp = fam_exp['Total Rice Expenditure'][:1000]
