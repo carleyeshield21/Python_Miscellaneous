@@ -31,3 +31,17 @@ print(len(found_chapter))
 # This code will output all the individual words
 pattern4 = re.compile('[a-zA-Z]+')
 found_chapter1 = re.findall(pattern3, pdf_text_to_string)
+
+# Finding the word frequencies
+dict_freq = {}
+for word in found_chapter1:
+    if word in dict_freq:
+        dict_freq[word] = dict_freq[word] + 1
+    else:
+        dict_freq[word] = 1
+# print(dict_freq)
+
+# convert to a list use dictionary comprehension .items()
+dict_freq_list = [[value,key] for key, value in dict_freq.items()]
+# print(dict_freq_list)
+print(sorted(dict_freq_list,reverse=True))
