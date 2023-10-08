@@ -21,3 +21,13 @@ findings = re.findall(pattern, pdf_text_to_string)
 sentences_with_gold = [item.replace('\\n','') for item in findings]
 print(sentences_with_gold)
 print(len(sentences_with_gold))
+
+# This code will output all the individual characters
+pattern3 = re.compile('[a-zA-Z]')
+found_chapter = re.findall(pattern3, pdf_text_to_string)
+print(found_chapter)
+print(len(found_chapter))
+
+# This code will output all the individual words
+pattern4 = re.compile('[a-zA-Z]+')
+found_chapter1 = re.findall(pattern3, pdf_text_to_string)
