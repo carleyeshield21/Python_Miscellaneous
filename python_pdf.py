@@ -19,18 +19,20 @@ findings = re.findall(pattern, pdf_text_to_string)
 #     print(type(item))
 
 sentences_with_gold = [item.replace('\\n','') for item in findings]
-print(sentences_with_gold)
-print(len(sentences_with_gold))
+# print(sentences_with_gold)
+# print(len(sentences_with_gold))
 
 # This code will output all the individual characters
-pattern3 = re.compile('[a-zA-Z]')
-found_chapter = re.findall(pattern3, pdf_text_to_string)
-print(found_chapter)
-print(len(found_chapter))
+# pattern3 = re.compile('[a-zA-Z]')
+# found_chapter = re.findall(pattern3, pdf_text_to_string)
+# print(found_chapter)
+# print(len(found_chapter))
 
 # This code will output all the individual words
 pattern4 = re.compile('[a-zA-Z]+')
-found_chapter1 = re.findall(pattern3, pdf_text_to_string)
+found_chapter1 = re.findall(pattern4, pdf_text_to_string)
+# print(found_chapter1)
+# print(len(found_chapter1))
 
 # Finding the word frequencies
 dict_freq = {}
@@ -39,7 +41,7 @@ for word in found_chapter1:
         dict_freq[word] = dict_freq[word] + 1
     else:
         dict_freq[word] = 1
-# print(dict_freq)
+print(dict_freq)
 
 # convert to a list use dictionary comprehension .items()
 dict_freq_list = [[value,key] for key, value in dict_freq.items()]
